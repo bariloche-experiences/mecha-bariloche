@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bariloche Experiencias</title>
+<title>Casa de Montaña · Lago Nahuel Huapi · Bariloche</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#0a0f1a;color:#f1f5f9;min-height:100vh;padding-bottom:90px}
@@ -167,8 +167,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 </a>
 
 <div class="hero">
-  <div class="hero-badge" id="hero-badge">🏔️ Patagonia · Bariloche</div>
-  <h1 id="hero-title">Bariloche<br>Experiencias</h1>
+  <div class="hero-badge" id="hero-badge">🏔️ Vista al lago Nahuel Huapi</div>
+  <h1 id="hero-title">Casa de<br>Montaña</h1>
   <p class="hero-sub">Calle Saihueque 2024 · <span id="hero-sub">Tu guía completa</span></p>
   <div class="lang-bar">
     <button class="lang-btn active" onclick="setLang('es')">🇦🇷 ES</button>
@@ -298,7 +298,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 <div style="height:1px;background:linear-gradient(90deg,transparent,#21262d,transparent);margin:1.5rem 1.5rem 0"></div>
 <!-- QUÉ CONOCER EN BARILOCHE -->
 <div class="sec">
-  <div class="sec-title green">🌿 <span class="t" data-es="Lugares para no perderte" data-en="Places not to miss" data-pt="Lugares para não perder">Lugares para no perderte</span></div>
+  <div class="sec-title green">🌄 <span class="t" data-es="Explorá la Patagonia" data-en="Explore Patagonia" data-pt="Explore a Patagônia">Explorá la Patagonia</span></div>
   <div class="places-wrap">
     <div class="place-card"><div class="place-header"><div class="place-name">Cerro Otto</div><div class="place-badge t" data-es="⭐ Clásico" data-en="⭐ Classic" data-pt="⭐ Clássico">⭐ Clásico</div></div><div class="place-desc active" data-lang="es">Atardecer increíble. Invierno: culopatin y aventura. Verano: bicicletas para bajar. Confitería giratoria en la cima.</div><div class="place-desc" data-lang="en">Incredible sunset. Winter: sleds & adventure. Summer: bikes to descend. Rotating café at the summit.</div><div class="place-desc" data-lang="pt">Pôr do sol incrível. Inverno: trenós e aventura. Verão: bicicletas para descer. Confeitaria giratória no cume.</div>
     <div style="display:flex;gap:6px;margin-top:8px;flex-wrap:wrap">
@@ -984,9 +984,9 @@ function setLang(lang){
     const ig=document.getElementById('exp-btn-ig');if(ig)ig.textContent=t.ig;
   }
   const heroTexts = {
-    es: {badge:'🏔️ Patagonia · Bariloche', title:'Bariloche<br>Experiencias', sub:'Tu guía completa'},
-    en: {badge:'🏔️ Patagonia · Bariloche', title:'Bariloche<br>Experiences',  sub:'Your complete guide'},
-    pt: {badge:'🏔️ Patagônia · Bariloche', title:'Bariloche<br>Experiências', sub:'Seu guia completo'}
+    es: {badge:'🏔️ Vista al lago Nahuel Huapi', title:'Casa de<br>Montaña', sub:'Tu guía completa'},
+    en: {badge:'🏔️ Lake Nahuel Huapi view',     title:'Mountain<br>Cabin',   sub:'Your complete guide'},
+    pt: {badge:'🏔️ Vista ao lago Nahuel Huapi',  title:'Casa de<br>Montanha',  sub:'Seu guia completo'}
   };
   const ht = heroTexts[lang];
   const hb = document.getElementById('hero-badge'); if(hb) hb.textContent = ht.badge;
