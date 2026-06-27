@@ -299,7 +299,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 <div style="margin:2.5rem 1.5rem 0.75rem">
   <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
     <span style="flex:1;height:1px;background:linear-gradient(90deg,rgba(52,211,153,0.35),transparent)"></span>
-    <span style="font-size:10px;font-weight:900;letter-spacing:2.5px;text-transform:uppercase;color:#34d399">🌄 PARA VISITAR</span>
+    <span class="t" style="font-size:10px;font-weight:900;letter-spacing:2.5px;text-transform:uppercase;color:#34d399" data-es="🌄 PARA VISITAR" data-en="🌄 TO VISIT" data-pt="🌄 PARA VISITAR">🌄 PARA VISITAR</span>
     <span style="flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(52,211,153,0.35))"></span>
   </div>
   <button class="ext-tab" onclick="setExt('patagonia')" style="width:100%;display:flex;align-items:center;justify-content:space-between;font-size:16px;font-weight:800;padding:18px 22px;border-color:rgba(16,185,129,0.55)">
@@ -842,7 +842,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 
 <!-- JUANI RENT A CAR -->
 <div style="padding:1rem 1.5rem 0">
-  <div style="font-size:13px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#60a5fa;margin-bottom:10px;display:flex;align-items:center;gap:7px">🚗 Alquiler de Auto en Bariloche<span style="flex:1;height:1px;background:linear-gradient(90deg,rgba(96,165,250,0.3),transparent);display:inline-block;margin-left:4px"></span></div>
+  <div style="font-size:13px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#60a5fa;margin-bottom:10px;display:flex;align-items:center;gap:7px"><span class="t" data-es="🚗 Alquiler de Auto en Bariloche" data-en="🚗 Car Rental in Bariloche" data-pt="🚗 Aluguel de Carro em Bariloche">🚗 Alquiler de Auto en Bariloche</span><span style="flex:1;height:1px;background:linear-gradient(90deg,rgba(96,165,250,0.3),transparent);display:inline-block;margin-left:4px"></span></div>
   <div style="background:linear-gradient(135deg,#0a1628 0%,#0f2040 100%);border:1.5px solid rgba(37,99,235,0.4);border-radius:20px;padding:1.2rem 1.4rem;position:relative;overflow:hidden">
     <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 80% 30%,rgba(37,99,235,0.1) 0%,transparent 60%)"></div>
     <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;position:relative">
@@ -1053,6 +1053,16 @@ function setLang(lang){
   const vl = videoLabels[lang];
   const vl1 = document.getElementById('vd1-es-label'); if(vl1) vl1.textContent = vl;
   const vl2 = document.getElementById('vd2-es-label'); if(vl2) vl2.textContent = vl;
+  const expT={
+    es:{title:'Gemas ocultas de la Patagonia',desc:'Te llevamos a lugares únicos e inolvidables que solo los locales conocen — cascadas secretas, miradores sin turistas, rincones mágicos de la Patagonia.',book:'Reservar en Airbnb',ig:'Ver fotos'},
+    en:{title:'Hidden gems of Patagonia',desc:'We take you to unique and unforgettable places only locals know — secret waterfalls, tourist-free viewpoints, magical corners of Patagonia.',book:'Book on Airbnb',ig:'See photos'},
+    pt:{title:'Joias escondidas da Patagônia',desc:'Levamos você a lugares únicos e inesquecíveis que só os locais conhecem — cachoeiras secretas, mirantes sem turistas, cantos mágicos da Patagônia.',book:'Reservar no Airbnb',ig:'Ver fotos'}
+  };
+  const expT_=expT[lang];if(expT_){
+    const eh=document.getElementById('exp-h-title');if(eh)eh.textContent=expT_.title;
+    const ed=document.getElementById('exp-h-desc');if(ed)ed.textContent=expT_.desc;
+    const eb=document.getElementById('exp-btn-book');if(eb)eb.textContent=expT_.book;
+  }
   renderOutfit();
   renderWeather(lang);
   updateWelcome();
