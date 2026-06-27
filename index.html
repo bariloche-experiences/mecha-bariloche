@@ -126,7 +126,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .season-text{font-size:13px;color:#e2e8f0;line-height:1.5}
 .extras-tabs{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin-bottom:1rem}
 .extras-tabs::-webkit-scrollbar{display:none}
-.ext-tab{background:#161b22;border:1px solid #374151;color:#cbd5e1;font-size:16px;font-weight:700;padding:13px 22px;border-radius:20px;cursor:pointer;white-space:nowrap;transition:all 0.2s;flex-shrink:0}
+.ext-tab{background:#161b22;border:1px solid #374151;color:#cbd5e1;font-size:14px;font-weight:600;padding:10px 18px;border-radius:20px;cursor:pointer;white-space:nowrap;transition:all 0.2s;flex-shrink:0}
 .ext-tab.active,.ext-tab:hover{background:#2563eb;border-color:#2563eb;color:#fff}
 .ext-group{display:none}
 .ext-group.visible{display:block}
@@ -295,10 +295,14 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 </div>
 
 
-<div style="height:1px;background:linear-gradient(90deg,transparent,#21262d,transparent);margin:1.5rem 1.5rem 0"></div>
 <!-- QUÉ CONOCER EN BARILOCHE -->
-<div class="sec">
-  <div class="sec-title green">🌄 <span class="t" data-es="Explorá la Patagonia" data-en="Explore Patagonia" data-pt="Explore a Patagônia">Explorá la Patagonia</span></div>
+<div style="padding:0 1.5rem 0.75rem">
+  <button class="ext-tab" onclick="setExt('patagonia')" style="width:100%;display:flex;align-items:center;justify-content:space-between;font-size:15px;font-weight:800;padding:15px 20px;border-color:rgba(16,185,129,0.45)">
+    <span>🌄 <span class="t" data-es="Explorá la Patagonia" data-en="Explore Patagonia" data-pt="Explore a Patagônia">Explorá la Patagonia</span></span>
+    <span style="font-size:12px;opacity:0.65" class="t" data-es="21 destinos ▾" data-en="21 destinations ▾" data-pt="21 destinos ▾">21 destinos ▾</span>
+  </button>
+</div>
+<div class="ext-group" id="ext-patagonia">
   <div class="places-wrap">
     <div class="place-card"><div class="place-header"><div class="place-name">Cerro Otto</div><div class="place-badge t" data-es="⭐ Clásico" data-en="⭐ Classic" data-pt="⭐ Clássico">⭐ Clásico</div></div><div class="place-desc active" data-lang="es">Atardecer increíble. Invierno: culopatin y aventura. Verano: bicicletas para bajar. Confitería giratoria en la cima.</div><div class="place-desc" data-lang="en">Incredible sunset. Winter: sleds & adventure. Summer: bikes to descend. Rotating café at the summit.</div><div class="place-desc" data-lang="pt">Pôr do sol incrível. Inverno: trenós e aventura. Verão: bicicletas para descer. Confeitaria giratória no cume.</div>
     <div style="display:flex;gap:6px;margin-top:8px;flex-wrap:wrap">
@@ -851,11 +855,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
   </div>
 </div>
 
-<div style="height:1px;background:linear-gradient(90deg,transparent,#21262d,transparent);margin:1.5rem 1.5rem 0"></div>
-
-<!-- EXPERIENCIAS HIGHLIGHT -->
-<div style="padding:1rem 1.5rem 0">
-  <div style="font-size:13px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#fbbf24;margin-bottom:10px;display:flex;align-items:center;gap:7px">⭐ Contratá tu Tour Privado<span style="flex:1;height:1px;background:linear-gradient(90deg,rgba(251,191,36,0.3),transparent);display:inline-block;margin-left:4px"></span></div>
   <div style="background:linear-gradient(135deg,#0f0800 0%,#1e1000 40%,#0f0800 100%);border:1.5px solid rgba(251,191,36,0.4);border-radius:20px;overflow:hidden;position:relative">
     <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 10% 50%,rgba(251,191,36,0.1) 0%,transparent 50%),radial-gradient(ellipse at 90% 20%,rgba(239,68,68,0.08) 0%,transparent 50%)"></div>
     <div style="padding:1.4rem 1.4rem 1rem;position:relative">
@@ -966,7 +965,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 <div style="height:1px;background:linear-gradient(90deg,transparent,#21262d,transparent);margin:0 1.5rem 1.5rem"></div>
 
 <div class="footer">
-  <div class="footer-logo">Bariloche Experiencias</div>
+  <div class="footer-logo">Casa de Montaña · Bariloche</div>
   <strong style="color:#6b7280;display:block;font-size:13px;margin-bottom:6px">Calle Saihueque 2024 · San Carlos de Bariloche</strong>
   Mercedes · Anfitriona
   <div style="margin-top:12px;font-size:12px;color:#94a3b8" id="footer-wa-msg">Contactanos por cualquier duda — respondemos rápido 🙌</div>
@@ -1003,18 +1002,6 @@ function setLang(lang){
   document.getElementById('ts-in').textContent=sin[lang];
   document.getElementById('ts-out').textContent=sout[lang];
   syncVideos();
-  const expT={
-    es:{title:'Gemas ocultas de la Patagonia',desc:'Te llevamos a lugares únicos e inolvidables que solo los locales conocen — cascadas secretas, miradores sin turistas, rincones mágicos de la Patagonia que no vas a encontrar en ningún tour convencional.',book:'Reservar en Airbnb',ig:'Ver fotos'},
-    en:{title:'Hidden gems of Patagonia',desc:'We take you to unique and unforgettable places only locals know — secret waterfalls, tourist-free viewpoints, magical corners of Patagonia you won\'t find on any conventional tour.',book:'Book on Airbnb',ig:'See photos'},
-    pt:{title:'Joias escondidas da Patagônia',desc:'Levamos você a lugares únicos e inesquecíveis que só os locais conhecem — cachoeiras secretas, mirantes sem turistas, cantos mágicos da Patagônia.',book:'Reservar no Airbnb',ig:'Ver fotos'}
-  };
-  const t=expT[lang];
-  if(t){
-    const h=document.getElementById('exp-h-title');if(h)h.textContent=t.title;
-    const d=document.getElementById('exp-h-desc');if(d)d.textContent=t.desc;
-    const b=document.getElementById('exp-btn-book');if(b)b.textContent=t.book;
-    const ig=document.getElementById('exp-btn-ig');if(ig)ig.textContent=t.ig;
-  }
   const heroTexts = {
     es: {badge:'🏔️ Vista al lago Nahuel Huapi', title:'Casa de<br>Montaña', sub:'Tu guía completa'},
     en: {badge:'🏔️ Lake Nahuel Huapi view',     title:'Mountain<br>Cabin',   sub:'Your complete guide'},
